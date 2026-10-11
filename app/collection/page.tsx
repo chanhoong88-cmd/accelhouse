@@ -1,7 +1,9 @@
-
-export const metadata = {
-  title: 'The Accel Collection',
-  description: 'Private residences held for Accel Elite members first, and Accel Reserve, by invitation only.'
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: { absolute: "The Accel Collection | Private Residences for Accel Elite Members" },
+  description:
+    "Private residences in Kuala Lumpur, Genting Highlands and Fraser's Hill, held for Accel Elite members first. Accel Reserve is by invitation only.",
+  alternates: { canonical: '/collection' }
 };
 
 export default function CollectionPage() {
@@ -73,11 +75,11 @@ export default function CollectionPage() {
 <section className="band on-cream">
   <div className="inner stack">
     <p className="eyebrow">For members</p>
-    <h2 className="h-lg">Priority access, arranged by your host</h2>
+    <h2 className="h-lg">Priority access, arranged by your membership host</h2>
     <dl className="ledger" style={{ maxWidth: '760px' }}>
       <div><dt>Priority</dt><dd>First call on dates across the Collection, ahead of general release</dd></div>
       <div><dt>Member rates</dt><dd>Preferential rates on every stay</dd></div>
-      <div><dt>Arranged</dt><dd>Your host books the residence, the table and the driver</dd></div>
+      <div><dt>Arranged</dt><dd>Your membership host books the residence, the table and the driver</dd></div>
     </dl>
     <p><a className="btn" href="/#invitation">Request an invitation</a></p>
   </div>

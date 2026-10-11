@@ -1,8 +1,11 @@
+import type { Metadata } from 'next';
 import ContactForm from '../components/ContactForm';
 
-export const metadata = {
-  title: 'Contact us',
-  description: 'Write to the team at Accel House, Ritchie Clubhouse, Kuala Lumpur.'
+export const metadata: Metadata = {
+  title: { absolute: "Contact Accel House | Private Members' Club, Kuala Lumpur" },
+  description:
+    "Write to Accel House at Ritchie Clubhouse, Taman U-Thant, Kuala Lumpur. Membership and general enquiries are answered in confidence.",
+  alternates: { canonical: '/contact' }
 };
 
 export default function ContactPage() {

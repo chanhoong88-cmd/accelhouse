@@ -63,10 +63,21 @@ Keep `SUPABASE_SERVICE_ROLE_KEY` private. It is only ever used on the server.
 5. Edit the `CNAME` record named `www` to the value from Vercel.
 6. Save. Within a few minutes to an hour Vercel shows both domains as "Valid" and adds HTTPS itself.
 
-## 5. At launch
+## 5. Google
 
-While the site is under review it asks search engines not to list it.
-When you are ready, add `NEXT_PUBLIC_ALLOW_INDEXING` = `true` in Vercel and redeploy.
+The site can be listed by Google as soon as accelhouse.com points to it.
+To hide it again, add `NEXT_PUBLIC_ALLOW_INDEXING` = `false` in Vercel and redeploy.
+
+1. Go to search.google.com/search-console and add the property `accelhouse.com`.
+2. Verify it with the DNS record Google gives you (add it as a TXT record in GoDaddy).
+3. Under **Sitemaps**, submit `https://accelhouse.com/sitemap.xml`.
+
+## If the forms do not send
+
+Open `https://accelhouse.com/api/health`. It lists each setting as "set" or
+"missing" (it never shows a value) and says whether the applications list can be reached.
+A setting that shows "missing" after you added it almost always means the site was not
+redeployed, or the setting was saved for Preview only and not Production.
 
 ## Where things are
 

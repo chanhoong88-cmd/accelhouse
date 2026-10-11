@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import InviteForm from './components/InviteForm';
+
+export const metadata: Metadata = {
+  title: { absolute: "Accel House | Private Members' Club in Kuala Lumpur" },
+  description:
+    "A private members' club in Kuala Lumpur for founders and CEOs. Board room, private dining, cigar bar, golf simulator and recovery suites. By invitation.",
+  alternates: { canonical: '/' }
+};
 
 export default function HomePage() {
   return (
@@ -14,7 +22,7 @@ export default function HomePage() {
       <a className="btn" href="#invitation">Request an invitation</a>
       <ul className="pillars-line"><li>Business</li><li>Social</li><li>Recovery</li></ul>
     </div>
-    <p className="place">Ritchie Clubhouse, Kuala Lumpur</p>
+    <p className="place">A private members&apos; club at Ritchie Clubhouse, Kuala Lumpur</p>
   </div>
   <div className="split-photo"><img src="/img/door.jpg" alt="The bronze lattice doors at the entrance to Accel House" /></div>
 </section>
@@ -24,7 +32,7 @@ export default function HomePage() {
   <div className="split-words">
     <p className="eyebrow">The idea</p>
     <h2 className="h-xl">One house.<br />Three reasons to return.</h2>
-    <p className="lede">Accel House brings private business space, considered hospitality and dedicated recovery into one members' setting. A meeting can become a meal, an introduction or an hour to recharge, without leaving the building.</p>
+    <p className="lede">Accel House is a private members' club in Kuala Lumpur that brings private business space, considered hospitality and dedicated recovery into one setting. A meeting can become a meal, an introduction or an hour to recharge, without leaving the building.</p>
     <p className="aside">Every visit ends with a reason for the next one.</p>
   </div>
   <div className="split-photo"><img src="/img/lounge.jpg" alt="The members lounge" /></div>
@@ -193,7 +201,7 @@ export default function HomePage() {
   <div className="inner">
     <p className="eyebrow">Accel Elite membership</p>
     <h2 className="h-xl" style={{ marginTop: '14px' }}>What your membership opens</h2>
-    <p className="lede" style={{ marginTop: '22px' }}>Accel Elite is the membership. Accel House is where it lives. Four parts of the house are yours whenever it is open. The others are reserved through the host using the club credits that come with your membership.</p>
+    <p className="lede" style={{ marginTop: '22px' }}>Accel Elite is the membership. Accel House is where it lives. Four parts of the house are yours whenever it is open. The others are reserved through the membership host using the club credits that come with your membership.</p>
 
     <div className="directory">
       <div><span className="room">Members lounge with bar</span><span className="pillar">Social</span><span className="access included">Included</span></div>
