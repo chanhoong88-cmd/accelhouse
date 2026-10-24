@@ -2,13 +2,35 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: { absolute: "The Accel Collection | Private Residences for Accel Elite Members" },
   description:
-    "Private residences in Kuala Lumpur, Genting Highlands and Fraser's Hill, held for Accel Elite members first. Accel Reserve is by invitation only.",
+    "The Accel Collection: hosted private residences in Kuala Lumpur, Genting Highlands and Fraser's Hill, held for Accel Elite members first. Accel Reserve is by invitation only.",
+  keywords: ['Accel Collection', 'The Accel Collection', 'Accel Collection Malaysia', 'Accel Elite', 'Accel House'],
   alternates: { canonical: '/collection' }
+};
+
+// Tells search engines these residences belong to the Accel Collection brand (home: accelgroup.asia).
+const collectionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'The Accel Collection',
+  url: 'https://www.accelgroup.asia/collection',
+  itemListElement: [
+    ['Rompin House', 'rompin-house'],
+    ['Villa Dani', 'dani-hill-villa-dani'],
+    ['The Mansion', 'dani-hill-the-mansion'],
+    ['Ritchie House', 'ritchie-house'],
+    ['The Crest', 'the-crest']
+  ].map(([name, slug], i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name,
+    url: `https://www.accelgroup.asia/collection/${slug}`
+  }))
 };
 
 export default function CollectionPage() {
   return (
 <main>
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
 <section className="band on-brown hero">
   <div className="inner stack">
     <p className="eyebrow">Beyond the house</p>
@@ -58,6 +80,7 @@ export default function CollectionPage() {
         <ul className="tags"><li>Skydeck</li><li>Infinity pool</li><li>Penthouse lounge</li></ul>
       </article>
     </div>
+    <p style={{ marginTop: '28px' }}><a href="https://www.accelgroup.asia/collection" target="_blank" rel="noopener">Explore the full Accel Collection at accelgroup.asia →</a></p>
   </div>
 </section>
 <section className="band on-brown" id="reserve">
